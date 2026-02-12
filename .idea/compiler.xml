@@ -11,13 +11,13 @@
         <module name="candidat" />
         <module name="ConfigServer" />
         <module name="Job" />
+        <module name="job" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="condidature" target="1.5" />
       <module name="eureka" target="17" />
-      <module name="job" target="17" />
       <module name="meeting" target="1.5" />
     </bytecodeTargetLevel>
   </component>
