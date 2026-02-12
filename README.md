@@ -1,98 +1,30 @@
-# Workshop 1 – Développement du premier microservice (Gestion des candidats)
+# Workshop 1 - Architecture Microservices
 
-🎓 **Formation : Microservices**  
-📅 **Année universitaire : 2025–2026**  
-🧑‍💻 **Workshop 1**
+Ce projet contient deux microservices développés avec Spring Boot dans le cadre de l'atelier sur les architectures distribuées.
 
----
+## 📂 Structure du projet
+- `backEnd/microservices/candidat` : Gestion des candidats (Base H2)
+- `backEnd/microservices/Job` : Gestion des offres d'emploi (Base MySQL)
 
-## 🎯 Objectif du workshop
+## 🚀 Instructions de lancement
 
-L’objectif de ce workshop est de **développer un premier microservice Spring Boot** selon l’architecture microservices.
+### 1. Microservice Candidat
+- **Port** : 8082
+- **Base de données** : H2 (En mémoire)
+- **Console H2** : http://localhost:8080/h2
+- **URLs principales** :
+  - Liste : `GET http://localhost:8080/candidats`
+  - Recherche : `GET http://localhost:8080/candidats/search/candidatByNom?name=...`
 
-À la fin de ce workshop, l’étudiant sera capable de :
-- Créer un projet **Spring Boot**
-- Développer un **microservice de gestion des candidats**
-- Exposer des **API REST**
-- Utiliser **Spring Data JPA**
-- Manipuler une base de données **H2**
-- Lancer **plusieurs instances** d’un même microservice sur des ports différents
+### 2. Microservice Job
+- **Port** : 8083
+- **Base de données** : MySQL (Base `job_db`)
+- **Configuration** : Vérifier `application.properties` pour les identifiants MySQL.
+- **URLs principales** :
+  - Liste : `GET http://localhost:8083/jobs`
+  - Ajouter : `POST http://localhost:8083/jobs`
+  - Changer état : `PUT http://localhost:8083/jobs/{id}/etat?etat=false`
 
----
-
-## 🧩 Microservice développé
-
-### 🏷️ Nom
-**Microservice Gestion des Candidats**
-
-### 📌 Fonctionnalités
-Le microservice permet de :
-- Afficher tous les candidats
-- Afficher un candidat par **id**
-- Rechercher un candidat par **nom**
-- Ajouter un candidat
-- Modifier un candidat
-- Supprimer un candidat
-
----
-
-## 🛠️ Technologies utilisées
-
-- Java 17
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Spring Data REST
-- H2 Database
-- Maven
-- IntelliJ IDEA
-
----
-## 📄 Énoncé du workshop
-
-L’énoncé détaillé du Workshop 1 est disponible au format PDF :
-
-👉 [Télécharger l’énoncé du Workshop 1]((https://github.com/badi3a/AWD-Training/blob/W01-Developper_MicroService/Atelier-dev%20MS.pdf)
-
----
-
-## 📝 Travail à faire (Homework)
-👉 Implémenter un **deuxième microservice** dans un **nouveau projet Spring Boot** sous le dossier backend/microservices.
-## ⚙️ Fonctionnalités attendues
-
-Le microservice doit permettre de :
-
-- Afficher **tous les jobs**
-- Afficher **un job par id**
-- Afficher **un job par nom**
-- Modifier l’état d’un job :
-  - `true` → poste **disponible**
-  - `false` → poste **occupé**
-
----
-
-## ✅ Rendu attendu
-
-- le dossier microservices avec deux Projets (deux microservices Job & Candidat) **Spring Boot fonctionnels**
-- Chaque projet avec un Code bien structuré selon l’architecture :
-  - `controller`
-  - `service`
-  - `repository`
-- API REST **testées** (Postman ou navigateur)
-- Projet **poussé sur GitHub**
-
----
-
-💡 **Conseil** :  
-Commencez par les fonctionnalités de base (CRUD), testez chaque étape, puis améliorez progressivement votre microservice.
-
-🚀 Bon courage et bon code !
-
-----
-## 🏫 Cadre pédagogique
-### Enseignante : [Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)
-Ce cours a été développé dans le cadre du **module Applications web Distribuées**,  
-en collaboration avec d’autres enseignants, à l’**[École d’Ingénieurs ESPRIT](https://www.esprit.tn)**.
-
-
-
+## 👤 Auteur
+- **Nom & Prénom** : Necib Zeineb
+- **Groupe** : 5
